@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { port } from './server'
 import * as fetch from 'node-fetch'
-import arethaRegistryURL from './../../config/index'
+import { arethaRegistryURL, name } from './../../config/index'
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get('/isAlive', async (req, res) => {
 
 router.put('/signal', async (req, res) => {
     try {
-        await fetch(arethaRegistryURL + "/alive?name=demoApp&url=" + encodeURIComponent("http://localhost:" + port), {
+        await fetch(arethaRegistryURL + "/alive?name=" + name + "&url=" + encodeURIComponent("http://localhost:" + port), {
             method: 'PUT',
         })
         res.sendStatus(200)
