@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import arethaRegistryURL from './../../config/index'
+import { arethaRegistryURL } from './../../config/index'
 
 const App = (props: AppProps) => {
 	const [appNameList, setAppNameList] = useState<JSON>(JSON.parse("{}"))
